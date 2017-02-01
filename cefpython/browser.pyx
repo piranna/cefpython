@@ -228,6 +228,9 @@ cdef class PyBrowser:
                     "OnStatusMessage", "OnConsoleMessage"]
             # KeyboardHandler
             self.allowedClientCallbacks += ["OnPreKeyEvent", "OnKeyEvent"];
+             # CefV8ContextHandler.
+            self.allowedClientCallbacks += ["OnContextCreated",
+                    "OnContextReleased" ,"OnUncaughtException"]
             # RequestHandler
             # NOTE: OnCertificateError and OnBeforePluginLoad are not
             #       included as they must be set using
